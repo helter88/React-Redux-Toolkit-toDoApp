@@ -17,8 +17,19 @@ function App() {
 		setActivity('');
 	};
 
-	let displayActivity = activityList?.map((activity) => (
-		<li key={Math.random()}>{activity}</li>
+	const deleteHandler = (item) => {
+		dispatch(listActions.remove(item));
+	};
+
+	let displayActivity = activityList?.map((item) => (
+		<li
+			key={Math.random()}
+			onClick={() => {
+				deleteHandler(item);
+			}}
+		>
+			{item}
+		</li>
 	));
 
 	return (

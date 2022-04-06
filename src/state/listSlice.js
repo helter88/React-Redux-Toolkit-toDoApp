@@ -12,7 +12,7 @@ const listSlice = createSlice({
 			state.taskList.push(action.payload);
 		},
 		remove(state, action) {
-			state.taskList.filter((item) => item !== action.payload);
+			state.taskList = state.taskList.filter((item) => item !== action.payload);
 		},
 	},
 });
