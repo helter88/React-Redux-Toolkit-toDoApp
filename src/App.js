@@ -1,15 +1,18 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './App.css';
+import { listActions } from './state/listSlice';
 
 function App() {
 	const [activity, setActivity] = useState('');
+	const dispatch = useDispatch();
 
 	const inputHandler = (e) => {
 		setActivity(e.target.value);
 	};
 
 	const activityHandler = () => {
-		console.log(activity);
+		dispatch(listActions.add(activity));
 	};
 
 	return (
