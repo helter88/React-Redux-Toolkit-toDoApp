@@ -14,6 +14,7 @@ function App() {
 
 	const activityHandler = () => {
 		dispatch(listActions.add(activity));
+		setActivity('');
 	};
 
 	let displayActivity = activityList?.map((activity) => (
